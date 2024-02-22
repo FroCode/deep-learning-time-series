@@ -44,4 +44,9 @@ UPDATE dummy
 SET Owns_Car = 'FALSE'
 WHERE Owns_Car = '0';
 
-SELECT * FROM dummy;
+SELECT DISTINCT gender
+FROM dummy;
+
+UPDATE dummy
+SET gender = 'None'
+WHERE gender = 'non-binary';
