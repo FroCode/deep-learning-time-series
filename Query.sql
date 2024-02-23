@@ -50,3 +50,8 @@ FROM dummy;
 UPDATE dummy
 SET gender = 'None'
 WHERE gender = 'non-binary';
+
+SELECT Gender, platform, COUNT(*) AS count
+FROM dummy
+GROUP BY Gender, platform
+ORDER BY Gender, COUNT(*) DESC;
