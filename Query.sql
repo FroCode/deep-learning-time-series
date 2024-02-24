@@ -99,3 +99,32 @@ SELECT COUNT(Gender) AS USERS , profession, TimeSpent
 FROM dummy
 GROUP BY profession , TimeSpent
 ORDER BY profession DESC;
+
+# How do interests correlate with time spent on the platform?
+
+SELECT COUNT(Gender) AS USERS, interests
+FROM dummy
+GROUP BY profession , interests
+ORDER BY profession DESC;
+
+SELECT COUNT(Gender) AS USERS , Demographics, interests
+FROM dummy
+GROUP BY Demographics, interests
+ORDER BY demographics;
+
+
+SELECT
+    profession,
+    AVG(AvgIncome) AS AvgIncome, -- Average income per profession
+    AVG(gender_count) AS average_gender_count -- Average count of each gender per profession
+FROM (
+    SELECT
+        profession,
+        Gender,
+        COUNT(*) AS gender_count, -- Count of each gender within the profession
+        AVG(income) AS AvgIncome -- Average income for each gender within the profession
+    FROM dummy
+    GROUP BY profession, Gender
+) AS subquery
+GROUP BY profession;
+
