@@ -89,5 +89,13 @@ FROM dummy
 GROUP BY Gender, platform
 ORDER BY Gender, platform;
 
+# What is the average time spent on the platform across all users?
 
+SELECT  COUNT(Gender) AS USERS , platform ,  FLOOR(AVG(TimeSpent)) AS AvgTime
+FROM dummy
+GROUP BY platform;
 
+SELECT COUNT(Gender) AS USERS , profession, TimeSpent
+FROM dummy
+GROUP BY profession , TimeSpent
+ORDER BY profession DESC;
