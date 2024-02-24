@@ -83,8 +83,11 @@ WHERE Gender IS NOT NULL
 GROUP BY Gender
 ORDER BY UserCount DESC;
 
-SELECT Gender,
-       AVG(TimeSpent) AS TimeAvgByGender
+
+SELECT Gender, platform, FLOOR(AVG(TimeSpent)) AS AvgTimeSpent
 FROM dummy
-GROUP BY Gender
-ORDER BY TimeAvgByGender
+GROUP BY Gender, platform
+ORDER BY Gender, platform;
+
+
+
