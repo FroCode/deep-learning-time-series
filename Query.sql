@@ -82,3 +82,9 @@ FROM dummy
 WHERE Gender IS NOT NULL
 GROUP BY Gender
 ORDER BY UserCount DESC;
+
+SELECT Gender,
+       AVG(TimeSpent) AS TimeAvgByGender
+FROM dummy
+GROUP BY Gender
+ORDER BY TimeAvgByGender
