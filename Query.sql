@@ -73,3 +73,12 @@ SELECT
 FROM dummy
 GROUP BY AgeGroup
 ORDER BY AgeGroup;
+
+
+SELECT
+  Gender,
+  COUNT(*) AS UserCount
+FROM dummy
+WHERE Gender IS NOT NULL
+GROUP BY Gender
+ORDER BY UserCount DESC;
