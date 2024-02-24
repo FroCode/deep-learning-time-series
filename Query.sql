@@ -112,7 +112,7 @@ FROM dummy
 GROUP BY Demographics, interests
 ORDER BY demographics;
 
-
+# What is the average income across different professions in your user base?
 SELECT
     profession,
     AVG(AvgIncome) AS AvgIncome, -- Average income per profession
@@ -128,3 +128,14 @@ FROM (
 ) AS subquery
 GROUP BY profession;
 
+#How does the profession affect platform usage patterns?
+
+SELECT profession, platform
+FROM dummy
+ORDER BY profession
+
+# What percentage of your users are in debt?
+
+SELECT COUNT(Gender) AS USERS , indebt
+FROM dummy
+GROUP BY indebt
