@@ -139,3 +139,4 @@ ORDER BY profession
 SELECT COUNT(Gender) AS USERS , indebt
 FROM dummy
 GROUP BY indebt
+# Export
